@@ -1,0 +1,61 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "codebase": "signal-intake",
+      "source": "functions/signal-intake",
+      "runtime": "nodejs20"
+    },
+    {
+      "codebase": "risk-agents",
+      "source": "functions/risk-agents",
+      "runtime": "nodejs20"
+    },
+    {
+      "codebase": "decision-engine",
+      "source": "functions/decision-engine",
+      "runtime": "nodejs20"
+    },
+    {
+      "codebase": "compliance-logger",
+      "source": "functions/compliance-logger",
+      "runtime": "nodejs20"
+    }
+  ],
+  "hosting": {
+    "site": "trustpulse",
+    "public": "apps/dashboard/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5010
+    },
+    "firestore": {
+      "port": 8085
+    },
+    "hosting": {
+      "port": 5002
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+lib/
+build/
+*.tsbuildinfo
+
+# Firebase
+.firebase/
+firestore-debug.log
+ui-debug.log
+firebase-debug.log
+
+# Environment variables & Credentials
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+functions/*/.env
+
+# Temporary / OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Exclude specific folders requested by the user
+skills/
+imp/
+.gemini/
